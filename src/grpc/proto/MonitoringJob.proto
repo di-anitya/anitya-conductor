@@ -1,0 +1,19 @@
+syntax = "proto3";
+ 
+package grpc;
+ 
+service MonitoringJob {
+  rpc SendJobInfo (JobRequest) returns (JobReply) {}
+}
+ 
+// The request message containing the user's name.
+message JobRequest {
+  string category = 1;
+  string target_url = 2;
+}
+ 
+// The response message containing the greetings
+message JobReply {
+  bool status = 1;
+  string result = 2;
+}
